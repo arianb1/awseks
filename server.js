@@ -1,16 +1,24 @@
 const express=require('express');
 
-const port=3000
 const app=express();
 
-app.get('/',(req,res)=>{
-    res.send('Hello!! this is running')
-})
 
-app.get('/api/test',(req,res)=>{
-    res.send('Hello from test route')
-})
+// Constants
+const PORT = 8080;
+const HOST = '0.0.0.0';
 
-app.listen(port,()=>{
-    console.log(`App listening at port:${port}`)
+
+app.get('/', (req, res) => {
+  res.statusCode = 200;
+  const msg = 'Hello from from Primus Learning, this was awesome';
+  res.send('SUCCESS');
+});
+
+app.get('/api/test', (req, res) => {
+  res.statusCode = 200;
+  res.send('Hello from test route')
+});
+
+app.listen(PORT, HOST, ()=>{
+    console.log(`Running on http://${HOST}:${PORT}`);
 })
