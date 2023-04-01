@@ -12,7 +12,7 @@ const HOST = '0.0.0.0';
 app.get('/', (req, res) => {
     let ts = Date.now();
     res.statusCode = 200;
-    res.send('SUCCESS' + ts.toString());
+    res.send('SUCCESS: ' + ts.toString());
 });
 
 app.get('/api/test', (req, res) => {
