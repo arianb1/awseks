@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: primuslearning
+  name: aricluster
   labels:
-    app: primuslearning
+    app: aricluster
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: primuslearning
+      app: aricluster
   template:
     metadata:
       labels:
-        app: primuslearning
+        app: aricluster
     spec:
       containers:
-        - name: primuslearning
-          image: 462613583642.dkr.ecr.us-east-2.amazonaws.com/primuslearning:1.1
+        - name: aricluster
+          image: 462613583642.dkr.ecr.us-east-2.amazonaws.com/aricluster:1.1
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
