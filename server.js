@@ -1,6 +1,7 @@
 const express=require('express');
 
 const app=express();
+app.disable('etag');
 
 
 // Constants
@@ -9,9 +10,9 @@ const HOST = '0.0.0.0';
 
 
 app.get('/', (req, res) => {
-  res.statusCode = 200;
-  const msg = 'Hello from from Primus Learning, this was awesome';
-  res.send('SUCCESS');
+    let ts = Date.now();
+    res.statusCode = 200;
+    res.send('SUCCESS' + ts.toString());
 });
 
 app.get('/api/test', (req, res) => {
@@ -22,3 +23,4 @@ app.get('/api/test', (req, res) => {
 app.listen(PORT, HOST, ()=>{
     console.log(`Running on http://${HOST}:${PORT}`);
 })
+
