@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 app.get('/api/test', (req, res) => {
   res.statusCode = 200;
-  res.send('Hello from test route')
+  res.send('TESTING ROUTE');
 });
 
 app.listen(PORT, HOST, ()=>{
