@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 
 app.get('/test', (req, res) => {
   res.statusCode = 200;
-  const msg = 'Hello from test route';
+  const msg = 'Hello from test route 1.3';
   res.send(msg);
 });
 
