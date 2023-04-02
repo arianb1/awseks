@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: aricluster
-          image: 462613583642.dkr.ecr.us-east-2.amazonaws.com/primuslearning:1.1
+          image: 462613583642.dkr.ecr.us-east-2.amazonaws.com/primuslearning:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
