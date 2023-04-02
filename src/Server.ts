@@ -1,5 +1,5 @@
 import express, { json } from "express";
-import cors from "cors";
+//import cors from "cors";
 import helmet from "helmet";
 import bodyParser from "body-parser";
 import HttpError, { StatusCode } from "./exceptions/HttpError";
@@ -11,7 +11,7 @@ export function createServer(routes: express.Router) {
      * Middlewares
     */
 
-    app.use(cors());
+    //app.use(cors());
     app.use(helmet());
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
@@ -48,7 +48,7 @@ export function createServer(routes: express.Router) {
         next: express.NextFunction
     ) => {
         const error: HttpError = new HttpError("Not Found");
-        error.statusCode = StatusCode.NOT_FOUND;
+        error.statusCode = StatusCode.SUCCESSFUL_REQ;
         next(error);
     });
 

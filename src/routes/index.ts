@@ -2,7 +2,7 @@ import express from "express";
 import createPublicRouter from "./publicRouter";
 import PublicController from "../controllers/PublicController";
 import PublicService from "../services/PublicService";
-import { Connection } from "typeorm";
+//import { Connection } from "typeorm";
 
 
 export function createRoutes() {
