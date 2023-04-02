@@ -1,43 +1,13 @@
 {
-  "name": "emailservice",
+  "name": "awseks",
   "version": "1.0.0",
-  "description": "This repo contains a NodeJS project that connects to the Mailjet API and sends emails. It is used to send emails for my contact page on my [personal website](https://dbajollari1.github.io) but can be used to send emails for any purpose. In this README I also label the steps to build the project into a Docker image that can be pushed to Azure(as that's where I am hosting it) but feel free to disregard those steps if unnecessary for your purposes. All the code is in this GitHub repository, feel free to clone it and use it as a template for yourself! Before attempting to run the project make sure you have the latest version of [node](https://nodejs.org/en/) installed on your pc.",
+  "description": "Node.js on Docker",
+  "author": "Ivan Polovyi <polovyiivan@gmail.com>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon",
-    "build": "tsc",
-    "debug": "nodemon --debug index.js"
+    "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dbajollari1/EmailService.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/abajollari/lynxBE/issues"
-  },
-  "homepage": "https://github.com/abajollari/lynxBE#readme",
   "dependencies": {
-    "axios": "^0.27.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.2",
-    "express": "^4.18.1",
-    "helmet": "^6.0.0",
-    "node-mailjet": "^5.1.1",
-    "reflect-metadata": "^0.1.13",
-    "ts-node-dev": "^2.0.0",
-    "typeorm": "^0.3.9",
-    "winston": "^3.8.1"
-  },
-  "devDependencies": {
-    "@types/cors": "^2.8.12",
-    "@types/express": "^4.17.13",
-    "@types/node": "^18.7.14",
-    "@types/winston": "^2.4.4",
-    "nodemon": "^2.0.19",
-    "typescript": "^4.8.2"
+    "express": "^4.17.1"
   }
 }
