@@ -11,7 +11,7 @@ export function createRoutes() {
     const pubService: PublicService = new PublicService();
     const pubController: PublicController = new PublicController(pubService);
 
-    router.use('/', (req, res, next) => { res.status(200).json("Success: home route") });
+    router.use('/', (req, res, next) => { res.status(200).json("Success: home,,,,,,,,,") });
     router.use('/public', createPublicRouter(pubController));
     router.get('/test', (req, res, next) => { res.status(200).json("success from test route") });
     return router;
