@@ -27,8 +27,8 @@ app.get('/', (req, res) => {
 
 app.get('/test', (req, res) => {
   res.statusCode = 200;
-  const msg = 'Hello from /test Node!';
-  res.send(getPage(msg));
+  const msg = 'Hello from test route';
+  res.send(msg);
 });
 
 app.listen(PORT, HOST);
