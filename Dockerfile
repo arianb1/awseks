@@ -3,10 +3,11 @@ FROM node:14-alpine
 # Create app directory
 WORKDIR /usr/src/app
 
-COPY . .
+ADD . .
 
+ENV SERVER_PORT=8080
 RUN npm install
 
 EXPOSE 8080
 
-CMD [ "node", "server.js" ]
+CMD [ "node", "./dist/index.js" ]
