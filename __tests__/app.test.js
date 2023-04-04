@@ -4,16 +4,12 @@ const app = require("../index");
 //require("dotenv").config();
 const TEST_ROUTE = '/hello_route'
 
-afterAll(async () => {
-    await app.close();
-});
 
 describe("GET /test hello route", () => {
   it("should return success", async () => {
     const res = await request(app).get(TEST_ROUTE);
-    expect(res.statusCode).toBe(201)
+    expect(res.statusCode).toBe(200);
     expect(res.text).toEqual('Hello');
-    document();
   });
 });
 
