@@ -5,9 +5,12 @@
   "author": "Ivan Polovyi <polovyiivan@gmail.com>",
   "main": "index.js",
   "scripts": {
+    "test": "jest --testTimeout=5000",
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
   }
 }

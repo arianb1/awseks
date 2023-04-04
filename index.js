@@ -25,9 +25,9 @@ app.get('/', (req, res) => {
   res.send(getPage(msg));
 });
 
-app.get('/test', (req, res) => {
+app.get('/hello_route', (req, res) => {
   res.statusCode = 200;
-  const msg = 'Hello from test route using run number';
+  const msg = 'Hello';
   res.send(msg);
 });
 
@@ -58,3 +58,5 @@ function getPage(message) {
     + "</html>\n";
   return body;
 }
+
+module.exports = app
