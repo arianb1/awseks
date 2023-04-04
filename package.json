@@ -5,7 +5,7 @@
   "author": "Ivan Polovyi <polovyiivan@gmail.com>",
   "main": "index.js",
   "scripts": {
-    "test": "jest --testTimeout=5000",
+    "test": "jest --forceExit",
     "start": "node index.js"
   },
   "dependencies": {

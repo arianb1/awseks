@@ -21,7 +21,7 @@ app.set('etag', false)
 app.get('/', (req, res) => {
   res.set('Cache-Control', 'no-store')
   res.statusCode = 200;
-  const msg = 'Hello ari, this was awesome';
+  const msg = 'Hello ari, this was awesome including test';
   res.send(getPage(msg));
 });
 
@@ -31,8 +31,10 @@ app.get('/hello_route', (req, res) => {
   res.send(msg);
 });
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+app.listen(
+  PORT, HOST,
+  () => console.log(`Running on http://${HOST}:${PORT}`)
+);
 
 function getPage(message) {
 
