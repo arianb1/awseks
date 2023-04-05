@@ -9,6 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+
     strategy:
       matrix:
         node-version: [14.x, 15.x]
@@ -19,6 +20,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - run: sed -e 's|TAG_PLACEHOLDER|'abc'|g' deployment.yaml
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
@@ -51,7 +53,7 @@ jobs:
       env:
         REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         REPOSITORY: primuslearning
-        IMAGE_TAG: 1.9
+        IMAGE_TAG: ${{github.run_number}}
       run: |
         docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
@@ -61,5 +63,5 @@ jobs:
     
     - name: Deploy to EKS
       run: |
-        kubectl apply -f deployment.yaml
+        sed -e 's|TAG_PLACEHOLDER|$IMAGE_TAG|g' deployment.yaml | kubectl apply -f -
         kubectl apply -f service.yaml

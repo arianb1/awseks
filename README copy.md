@@ -113,4 +113,4 @@ for pod in $(kubectl get po --output=jsonpath={.items..metadata.name}); do echo 
 kubectl get deployment nginx-deployment --subresource=status
 
 
-${{github.run_number}}
+kubectl apply -f deployment.yaml
